@@ -1,0 +1,88 @@
+<?php
+defined('_JEXEC') or die('Restricted access');
+
+$idmodule    	= $module->id;
+$insaddress  	= $params->get('insaddress');
+$instid 			= $params->get('instid');
+$insttoken 		= $params->get('insttoken');
+$insttag 		= $params->get('insttag');
+?>
+<div id="instafeed-gallery-feed" class="gallery row no-gutter">
+  
+</div>
+<div class='inst-buttons'>
+	<button id="btn-instafeed-load" class="btn"><span class='inst_icon'></span><span class='inst_text'><?php echo JText::_('MOD_MAIL_FRONT_LOAD_MORE')?></span></button>
+	<button id='btn-follow-inst' class="btn" onclick="location.href='https://www.instagram.com/<?php echo $insaddress ?>/';"><span class='inst_icon'></span><span class='inst_text'><?php echo JText::_('MOD_MAIL_FRONT_FOLLOW_US')?></span></button>
+</div>
+
+<script type="text/javascript">
+function myInstaFeed() {
+
+var insaddress 	= jQuery('<?php echo $insaddress ?>');
+var instid 			= jQuery('<?php echo $instid ?>');
+var insttoken 		= jQuery('<?php echo $insttoken ?>');
+var insttag 		= jQuery('<?php echo $insttag ?>')
+if ((insttag.length != 0) || (insttag != '')){
+var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
+
+var galleryFeed = new Instafeed({
+	get: "user",
+	userId: "<?php echo $instid ?>",
+	accessToken: "<?php echo $insttoken ?>",
+	resolution: "standard_resolution",
+	filter: function(image) { 
+			return image.tags.indexOf('<?php echo $insttag ?>') >= 0; 
+			},
+//	useHttp: "true",
+	limit: 4,
+
+	template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="{{image}}"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
+	target: "instafeed-gallery-feed",
+	after: function() {
+    // disable button if no more results to load
+		if (!this.hasNext()) {
+      jQuery("#btn-instafeed-load").hide();
+      }
+      else {
+      	jQuery("#btn-instafeed-load").show();
+      }
+  },
+});
+galleryFeed.run();
+	btnInstafeedLoad.addEventListener("click", function() {
+	galleryFeed.next();
+});
+galleryFeed.run();
+}
+else if ((insttag.length == 0) || (insttag == '')) {
+var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
+
+var galleryFeed = new Instafeed({
+	get: "user",
+	userId: "<?php echo $instid ?>",
+	accessToken: "<?php echo $insttoken ?>",
+	resolution: "standard_resolution",
+	limit: 4,
+	template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="{{image}}"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
+	target: "instafeed-gallery-feed",
+	after: function() {
+    // disable button if no more results to load
+		if (!this.hasNext()) {
+      jQuery("#btn-instafeed-load").hide();
+      }
+      else {
+      	jQuery("#btn-instafeed-load").show();
+      }
+  },
+});
+galleryFeed.run();
+	btnInstafeedLoad.addEventListener("click", function() {
+	galleryFeed.next();
+});
+galleryFeed.run();	
+}
+
+}
+
+</script>
+<!--<script src="modules/mod_mailva_social_feed/js/mailvafeed.js"></script>-->

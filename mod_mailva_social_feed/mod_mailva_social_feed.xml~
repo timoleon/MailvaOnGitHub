@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.0.0" type="module" method="upgrade" client="site">
+
+        <name>Mailva Social Feed</name>
+        <author>Mailva Social Feed</author>
+        <creationDate>2017</creationDate>
+        <copyright>All rights reserved by Timoleon Pagounas.</copyright>
+        <license>GPL 2.0</license>
+        <authorEmail>tpagounas@gmail.com</authorEmail>
+        <authorUrl>mailva.eu</authorUrl>
+        <version>1.0.0</version>
+        <description>A simple contact form</description>
+	<files>
+		<filename module="mod_mailva_social_feed">mod_mailva_social_feed.php</filename>
+		<filename>mod_mailva_social_feed.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>language</folder>
+		<folder>theme</folder>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+	</files>
+
+   <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_mailva_social_feed.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_mailva_social_feed.sys.ini</language>
+		<language tag="en-GB">language/el-GR/el-GR.mod_mailva_social_feed.ini</language>
+		<language tag="en-GB">language/el-GR/el-GR.mod_mailva_social_feed.sys.ini</language>
+	</languages>
+
+	<fields name="params">
+		<config>
+			<fields name="params" addfieldpath="">
+				<fieldset name="basic">
+					<field name="insaddress" type="text"
+					label="MOD_MAIL_ADMIN_USER_ADDRESS"
+					description="MOD_MAIL_ADMIN_USER_ADDRESS_DESC"
+					required="true"
+					size="128"
+					class="inputbox"
+					/>
+					<field name="instid" type="text"
+					label="MOD_MAIL_ADMIN_USER_ID"
+					description="MOD_MAIL_ADMIN_USER_ID_DESC"
+					required="true"
+					size="50"
+					class="inputbox"
+					/>
+					<field name="insttoken" type="text"
+					label="MOD_MAIL_ADMIN_USER_TOKEN"
+					description="MOD_MAIL_ADMIN_USER_TOKEN_DESC"
+					required="true"
+					size="128"
+					class="inputbox"
+					/>
+					</fieldset>
+			<!--	<field type="spacer" name="myspacer" label="&lt;hr/&gt;More parameters" 
+				/>
+					
+			-->
+				<fieldset name="customise" label="MOD_MAIL_INST_FEED_CUSTOMISE">
+					
+					<field name="insttag" type="text"
+					label="MOD_MAIL_ADMIN_USER_HASHTAG"
+					description="MOD_MAIL_ADMIN_USER_HASHTAG_DESC"
+					default="0"
+					size="20"
+					class="inputbox"
+					/>
+					<field name="numofphotos" type="text"
+					label="MOD_MAIL_ADMIN_USER_NUM_OF_PHOTOS"
+					description="MOD_MAIL_ADMIN_USER_NUM_OF_PHOTOS_DESC"
+					default="4"
+					size="20"
+					class="inputbox"
+					/>
+					<field name="numofcolumns" type="text"
+					label="MOD_MAIL_ADMIN_USER_NUM_OF_COLUMNS"
+					description="MOD_MAIL_ADMIN_USER_NUM_OF_COLUMNS_DESC"
+					default="4"
+					size="20"
+					class="inputbox"
+					/>
+			
+				</fieldset>
+			</fields>
+		</config>
+	</fields>
+</extension>

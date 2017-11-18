@@ -1,0 +1,24 @@
+﻿; Joomla! Project
+; Copyright (C) 2013 NooTheme. All rights reserved.
+; License GNU General Public License version 2 or later; see LICENSE.txt, see LICENSE.php
+; Note : All ini files need to be saved as UTF-8 - No BOM
+
+MOD_MAIL_ADMIN_USER_ADDRESS="Name"
+MOD_MAIL_ADMIN_USER_ADDRESS_DESC="Insert the name you use on instagram. your name is the word after the slash of com,  for ex. https://instagram.com/MuralArtworks/ the name is 'MuralArtworks'"
+
+MOD_MAIL_ADMIN_USER_ID="User ID"
+MOD_MAIL_ADMIN_USER_ID_DESC="Insert User ID (UID). You can find your UID in this link "
+
+MOD_MAIL_ADMIN_USER_TOKEN="Token"
+MOD_MAIL_ADMIN_USER_TOKEN_DESC="Inseret token"
+
+MOD_MAIL_INST_FEED_CUSTOMISE="Instagram View"
+
+MOD_MAIL_ADMIN_USER_NUM_OF_PHOTOS="Photos toshow"
+MOD_MAIL_ADMIN_USER_NUM_OF_PHOTOS_DESC="Numbers of photos to show by default before you load more."
+
+MOD_MAIL_ADMIN_USER_NUM_OF_COLUMNS="Columns"
+MOD_MAIL_ADMIN_USER_NUM_OF_COLUMNS_DESC="Number of Photos to show in a row."
+
+MOD_MAIL_FRONT_LOAD_MORE="Load More"
+MOD_MAIL_FRONT_FOLLOW_US="Follow us"

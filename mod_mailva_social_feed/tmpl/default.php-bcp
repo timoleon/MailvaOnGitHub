@@ -1,0 +1,33 @@
+<?php
+defined('_JEXEC') or die('Restricted access');
+?>
+<div id="instafeed-gallery-feed" class="gallery row no-gutter">
+  
+</div>
+<div class='inst-buttons'>
+	<button id="btn-instafeed-load" class="btn"><span class='icon'></span><span class='text'>Load more</span></button>
+	<button id='btn-follow-inst' class="btn" onclick="location.href='https://www.instagram.com/muralartworks/';"><span class='icon'></span><span class='text'>follow us</span></button>
+</div>
+
+<!--
+<div class="share">
+  <div class="instagram"></div>
+</div>
+-->
+<script>
+//    var feed = new Instafeed({
+//        get: 'tagged',
+//        tagName: 'awsome',
+//        accessToken: '1259058974.ba4c844.cdb43d999e46451986f6c4a127a50f81',
+//      clientId: 'e1b2eb219a3f44de8f1d650fae4084ce',
+//		userId: '1259058974',
+//        limit: '5',
+//    	sortBy: 'most-recent',
+//    	resolution: 'standard_resolution'
+//		template: '<div class="grid__item large--one-fifth"><a href="{{ instafeed_link }}" target="_blank"><img src="{{ instafeed_img }}"><span class="likes"><span class="icon icon-heart" aria-hidden="true"></span>{{ instafeed_likes }}</span></a></div>'
+//    });
+//    feed.run();
+
+
+</script>
+<script src="modules/mod_mailva_social_feed/js/mailvafeed.js"></script>
